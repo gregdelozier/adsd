@@ -1,0 +1,123 @@
+Script started on 2024-08-22 00:59:43+00:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="71" LINES="14"]
+$ sqlite3
+SQLite version 3.45.3 2024-04-15 13:34:05
+Enter ".help" for usage hints.
+Connected to a [1mtransient in-memory database[0m.
+Use ".open FILENAME" to reopen on a persistent database.
+[?2004hsqlite> exit[K[K[K[K.exit
+[?2004l$ sqlite3 pats[K[K[Kes[Kts.db
+SQLite version 3.45.3 2024-04-15 13:34:05
+Enter ".help" for usage hints.
+[?2004hsqlite> .tables
+[?2004l[?2004hsqlite> .exit[K[K[K[K[Kcreate table([K[K[K[K[K[K[K[K[K[K[K[K[K[7mCREATE TABLE pets ([27m
+[7m    id INTEGER PRIMARY KEY AUTOINCREMENT,[27m
+[7m    name TEXT NOT NULL,[27m
+[7m    type TEXT NOT NULL,[27m
+[7m    age INTEGER,[27m
+[7m    owner TEXT[27m[A[A[A[A[ACREATE TABLE pets (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    type TEXT NOT NULL,
+    age INTEGER,
+    owner TEXT);
+[?2004l[?2004hsqlite> .tables
+[?2004lpets
+[?2004hsqlite> select * from pets;
+[?2004l[?2004hsqlite> insert [K[K[K[K[K[K[K[7mINSERT INTO pets (name, type, age, owner)[27m
+[7mVALUES ('Bella', 'Dog', 5, 'John Doe');[27m[A[C[C[C[C[C[C[C[CINSERT INTO pets (name, type, age, owner)
+VALUES ('Bella', 'Dog', 5, 'John Doe');[1P[1P[1P[1P[1P[1@D[1@o[1@r[1@o[1@t[1@h[1@y[C[C[C[C[C[C[C[C[C[C[C[1P[1@9[C[C[C[C[C[C[C[C[C[C[C[1P');[1P');[1P');[1P');[1P');[1P');[1P');[1P');G');r');e');g');[C[C[C
+[?2004l[?2004hsqlite> select * [K from pets;
+[?2004l1|Dorothy|Dog|9|Greg
+[?2004hsqlite> select * from pets;[C[C[C[C[C[C[C[CINSERT INTO pets (name, type, age, owner)
+VALUES ('Dorothy', 'Dog', 9, 'Greg');[C[1P[1P[1P[1P[1P[1P[1P[1@L[1@i[1@a[1@m[C[C[C[C[C[C[C[1P[1P[1P[1@C[1@a[1@t[C[C[C[C[1P[1@8[C[C[C[C[C[C[C[1P');[1P');[1P');[1P');C');h');r');i');s');[C[C[C
+[?2004l[?2004hsqlite> INSERT INTO pets (name, type, age, owner)
+VALUES ('Liam', 'Cat', 8, 'Chris');[A[C[C[C[C[C[C[C[C[22Pselect * from pets;
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l1|Dorothy|Dog|9|Greg
+2|Liam|Cat|8|Chris
+[?2004hsqlite> .[Kmode cols[K[K[K[K[K[K[K[K[Kheaders on
+[?2004l[?2004h   ...> ;
+[?2004lParse error: near "headers": syntax error
+  headers on ;
+  ^--- error here
+[?2004hsqlite> .heaaders[K[K[K[K[Ke[Kders
+[?2004lUsage: .headers on|off
+[?2004hsqlite> .headers on
+[?2004l[?2004hsqlite> .headers on[K;[Kheaders on[C[C[C[C[C[C[C[Cselect * from pets;
+[?2004lid|name|type|age|owner
+1|Dorothy|Dog|9|Greg
+2|Liam|Cat|8|Chris
+[?2004hsqlite> .mode cols
+[?2004lError: mode should be one of: ascii box column csv html insert json line list markdown qbox quote table tabs tcl
+[?2004hsqlite> .mode cols[Kumb[Kn
+[?2004l[?2004hsqlite> .mode column[2Ps[C[C[C[C[C[C[C[Cselect * from pets;
+[?2004lid  name     type  age  owner
+--  -------  ----  ---  -----
+1   Dorothy  Dog   9    Greg 
+2   Liam     Cat   8    Chris
+[?2004hsqlite> select * from pets;[C[C[C[C[C[C[C[C[7P.mode column[2Ps[C[C[C[C[C[C[C[Cselect * from pets;[C[C[C[C[C[C[C[C[8P.headers on[K;[Kheaders on[C[C[C[C[C[C[C[Cselect * from pets;[C[C[C[C[C[C[C[CINSERT INTO pets (name, type, age, owner)
+VALUES ('Liam', 'Cat', 8, 'Chris');[C[1P[1P[1P[1P[1@G[1@o[1@l[1@d[1@i[1@e[C[C[C[C[C[C[C[1P[1P[1P[1@F[1@i[1@s[1@h[C[C[C[C[1P[1@0[1@.[1@5[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?2004hsqlite> INSERT INTO pets (name, type, age, owner)
+VALUES ('Goldie', 'Fish', 0.5, 'Chris');[A[C[C[C[C[C[C[C[C[22Pselect * from pets;
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7P.mode column[C[C[C[C[C[C[C[Cselect * from pets;
+[?2004lid  name     type  age  owner
+--  -------  ----  ---  -----
+1   Dorothy  Dog   9    Greg 
+2   Liam     Cat   8    Chris
+3   Goldie   Fish  0.5  Chris
+[?2004hsqlite> select * from pets;[C[C[C[C[C[C[C[CINSERT INTO pets (name, type, age, owner)
+VALUES ('Goldie', 'Fish', 0.5, 'Chris');[A[C[C[C[C[C[C[C[C[22Pselect * from pets;
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[7mUPDATE pets[27m
+[7mSET age = 6[27m
+[7mWHERE name = 'Bella';[27m
+[A[A[A[C[C[C[C[C[C[C[CUPDATE pets
+SET age = 6
+WHERE name = 'Bella';
+ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[A[C[C[C[C[C[C[C[C.mode column
+[K
+[K
+[K[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1PUPDATE pets
+SET age = 6
+WHERE name = 'Bella';
+ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P';[1P';[1P';[1P';[1P';D';e';t';[1P';[1P';o';r';o';t';h';y';[A[A[C[C[C[C[C[C[C[C.mode column
+[K
+[K
+[K[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1PUPDATE pets
+SET age = 6
+WHERE name = 'Dorothy';
+ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C 10
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C
+[?2004l[?2004hsqlite> UPDATE pets
+SET age = 10
+WHERE name = 'Dorothy';
+ [A[A[A[C[C[C[C[C[C[Cselect * from pets;
+[K
+[K
+[K[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lid  name     type  age  owner
+--  -------  ----  ---  -----
+1   Dorothy  Dog   10   Greg 
+2   Liam     Cat   8    Chris
+3   Goldie   Fish  0.5  Chris
+[?2004hsqlite> select * from pets;[C[C[C[C[C[C[C[C[8PUPDATE pets
+SET age = 10
+WHERE name = 'Dorothy';
+ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C            WHERE name = 'Dorothy';
+ [K
+[K[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C           select * from pets;
+[K
+[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K where Name [K[K[K[K[Kname == D[K[K[K Dor[K[K[K"Dorothy"
+[?2004l[?2004h   ...> ;
+[?2004lParse error: no such column: Dorothy
+  select * from pets where name = "Dorothy" ;
+                    error here ---^
+[?2004hsqlite> ;select * from pets where name = "Dorothy"[C[K'[1PDorothy''Dorothy'[C[C[C[C[C[C[C[C'[K;
+[?2004lid  name     type  age  owner
+--  -------  ----  ---  -----
+1   Dorothy  Dog   10   Greg 
+[?2004hsqlite> delee[Kte from pets where nae[Kme +[K[K="Liam";[1PLiam";'Liam";[C[C[C[C[C[1P;';[C[C[1P[1P[1P[1P[1P[1P[1@s[1@e[1@l[1@e[1@c[1@t[C[1@ [1@*[C[1@ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lid  name  type  age  owner
+--  ----  ----  ---  -----
+2   Liam  Cat   8    Chris
+[?2004hsqlite> select *  from pets where name='Liam';[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfrom pets where name = 'Dorothy';[C[C[C[C[C[C[C[C;[Kselect * from pets where name = "Dorothy"[C[C[C[C[C[C[C[C;[Kselect * from pets where name = 'Dorothy';[1P[1P[1P[1P[1P[1P[1P[1P[1@d[1@e[1@l[1@e[1@t[1@e[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
