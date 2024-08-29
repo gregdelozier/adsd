@@ -1,4 +1,4 @@
-1. How many movies are there? 
+1. How many movies are there that begin with "A"? 
 2. What is the longest movie? 
 3. What is the shortest movie? 
 4. What is the average length of a movie? 
