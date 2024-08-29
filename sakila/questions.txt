@@ -1,10 +1,36 @@
 1. How many movies are there that begin with "A"? 
+46
+
 2. What is the longest movie? 
+CHICAGO NORTH, CONTROL ANTHEM, DARN FORRESTER, GANGS PRIDE, HOME PITY, MUSCLE BRIGHT,
+POND SEATTLE, SOLDIERS EVOLUTION, SWEET BROTHERHOOD, WORST BANGER
+
 3. What is the shortest movie? 
+ACE GOLDFINGER, HEAVEN FREEDOM, MIDSUMMER GROUNDHOG, NOTTING SPEAKEASY,
+ODDS BOOGIE, PARADISE SABRINA, PELICAN COMFORTS, RUSH GOODFELLAS,
+STEPMOM DREAM, SUNSET RACER, VALENTINE VANISHING
+
 4. What is the average length of a movie? 
-5. What is the most common rental rate for movies? 
+115
+
+5. What is the most common rental rate for movies?
+0.99
+
 6. How many movies are there for each rental rate? 
+0.99 341
+4.99 336
+2.99 323
+
 7. Of the years covered, what was the most popular year for movies?
+2006
+
 8. What is the longest title for a movie? 
+ARACHNOPHOBIA ROLLERCOASTER
+
 9. What are the 10 longest movies, listed alphabetically? 
+CHICAGO NORTH, CONTROL ANTHEM, DARN FORRESTER, GANGS PRIDE, HOME PITY, MUSCLE BRIGHT,
+POND SEATTLE, SOLDIERS EVOLUTION, SWEET BROTHERHOOD, WORST BANGER
+
 10. Can you discover any other interesting facts about movie titles, in general? For instance, how many titles include the word "after"? 
+There are 3 films with 'BRIGHT' as the second part of the title: HEARTBREAKERS BRIGHT,
+MUSCLE BRIGHT, and ROBBERY BRIGHT
