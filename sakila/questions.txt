@@ -1,0 +1,10 @@
+1. How many movies are there? 
+2. What is the longest movie? 
+3. What is the shortest movie? 
+4. What is the average length of a movie? 
+5. What is the most common rental rate for movies? 
+6. How many movies are there for each rental rate? 
+7. Of the years covered, what was the most popular year for movies?
+8. What is the longest title for a movie? 
+9. What are the 10 longest movies, listed alphabetically? 
+10. Can you discover any other interesting facts about movie titles, in general? For instance, how many titles include the word "after"? 
