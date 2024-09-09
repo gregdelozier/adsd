@@ -1,0 +1,20 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        This is the list template.
+        Hello, {{ prof["name"] }}. I'm enjoying {{ prof["class"] }}!
+        <table>
+        {% for row in rows %}
+            <tr>
+                <td>The data is</td>
+                {% for item in row %}
+                    <td>{{ item }}</td>
+                {% endfor %}
+                <td><a href="/delete/{{row[0]}}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </table>
+    </body>
+</html>
