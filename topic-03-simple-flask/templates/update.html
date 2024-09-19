@@ -1,0 +1,18 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        This is the update template.
+        <form action="/update/{{data['id']}}" method="post">
+            <hr/>
+            <p>Animal Name:<input name="name" value="{{data['name']}}"/></p>
+            <p>Age:<input name="age" value="{{data['age']}}"/></p>
+            <p>Type:<input name="type" value="{{data['type']}}"/></p>
+            <p>Owner:<input name="owner" value="{{data['owner']}}"/></p>
+            <hr/>
+            <button type="submit">Update</button>
+            <hr/>
+        </form>
+    </body>
+</html>
