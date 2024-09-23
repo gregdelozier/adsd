@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>Update Kind</title>
+</head>
+<body>
+    <h1>Update Kind</h1>
+    <form action="/kind/update/{{ kind[0] }}" method="POST">
+        <p>Kind Name: <input name="kind_name" value="{{ kind[1] }}" required /></p>
+        <p>Food: <input name="food" value="{{ kind[2] }}" required /></p>
+        <p>Noise: <input name="noise" value="{{ kind[3] }}" required /></p>
+        <button type="submit">Update</button>
+    </form>
+    <br>
+    <a href="/kind/list">Back to Kind List</a>
+</body>
+</html>
