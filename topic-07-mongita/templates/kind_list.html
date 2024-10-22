@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>List of Animal Kinds</title>
+</head>
+<body>
+    <h1>List of Animal Kinds</h1>
+    
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Kind</th>
+            <th>Food</th>
+            <th>Noise</th>
+            <th>Actions</th>
+        </tr>
+        {% for kind in kinds %}
+        <tr>
+            <td>{{ kind[0] }}</td>
+            <td>{{ kind[1] }}</td>
+            <td>{{ kind[2] }}</td>
+            <td>{{ kind[3] }}</td>
+            <td>
+                <a href="/kind/update/{{ kind[0] }}">Update</a> |
+                <a href="/kind/delete/{{ kind[0] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/kind/create">Add New Kind</a>
+</body>
+</html>
+
