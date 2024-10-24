@@ -56,18 +56,12 @@ def get_delete(id):
     database.delete_pet(id)
     return redirect(url_for('get_list'))
 
-import sqlite3
 from pprint import pprint
-
-connection = sqlite3.connect("pets.db", check_same_thread=False)
-connection.execute("PRAGMA foreign_keys = 1")
 
 # List of kinds
 @app.route("/kind/list")
 def list_kinds():
-    cursor = connection.cursor()
-    cursor.execute("SELECT * FROM kind")
-    kinds = cursor.fetchall()
+    kinds = database.retrieve_list_kinds()
     return render_template("kind_list.html", kinds=kinds)
 
 # Create a new kind
@@ -75,30 +69,19 @@ def list_kinds():
 def create_kind():
     if request.method == 'POST':
         data = dict(request.form)
-        cursor = connection.cursor()
-        cursor.execute("INSERT INTO kind (kind_name, food, noise) VALUES (?, ?, ?)", 
-                       (data["kind_name"], data["food"], data["noise"]))
-        connection.commit()
+        database.create_kind(data)
         return redirect(url_for('list_kinds'))
     return render_template("kind_create.html")
 
 # Update an existing kind
 @app.route("/kind/update/<id>", methods=['GET', 'POST'])
 def update_kind(id):
-    cursor = connection.cursor()
-    
     if request.method == 'POST':
         data = dict(request.form)
-        cursor.execute("""
-            UPDATE kind 
-            SET kind_name=?, food=?, noise=? 
-            WHERE id=?
-        """, (data["kind_name"], data["food"], data["noise"], id))
-        connection.commit()
+        database.update_kind(id, data)
         return redirect(url_for('list_kinds'))
     
-    cursor.execute("SELECT * FROM kind WHERE id=?", (id,))
-    kind = cursor.fetchone()
+    kind = database.retrieve_kind(id)
     if kind is None:
         return "Kind not found"
     return render_template("kind_update.html", kind=kind)
@@ -106,16 +89,11 @@ def update_kind(id):
 # Delete a kind, with integrity error handling
 @app.route("/kind/delete/<id>")
 def delete_kind(id):
-    cursor = connection.cursor()
-    try:
-        cursor.execute("DELETE FROM kind WHERE id = ?", (id,))
-        connection.commit()
-        return redirect(url_for('list_kinds'))
-    except sqlite3.IntegrityError:
-        cursor.execute("SELECT * FROM kind")
-        kinds = cursor.fetchall()
-        error_message = "Cannot delete kind as it is associated with pets. Please delete the pets first."
+    error_message = database.delete_kind(id)
+    if error_message:
+        kinds = database.retrieve_list_kinds()
         return render_template("kind_list.html", kinds=kinds, error_message=error_message)
-
+    return redirect(url_for('list_kinds'))
+    
 if __name__ == "__main__":
     app.run(debug=True)
