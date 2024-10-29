@@ -197,6 +197,7 @@ def update_kind(id, data):
     connection.commit()
 
 def test_update_kind():
+    print("test update_kind")
     pet = retrieve_kind("1")
     data = {
         "kind_name":"puppy",
@@ -225,6 +226,6 @@ if __name__ == "__main__":
     test_retrieve_kinds()
     test_retrieve_kind()
     test_create_and_delete_kind()
-    # test_update_kind()
+    test_update_kind()
     print("done.")
 
