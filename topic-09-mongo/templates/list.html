@@ -6,7 +6,6 @@
     <h1>List of Pets</h1>
     <table border="1">
         <tr>
-            <th>ID</th>
             <th>Name</th>
             <th>Age</th>
             <th>Owner</th>
@@ -17,7 +16,6 @@
         </tr>
         {% for pet in pets %}
         <tr>
-            <td>{{ pet['id'] }}</td>
             <td>{{ pet['name'] }}</td>
             <td>{{ pet['age'] }}</td>
             <td>{{ pet['owner'] }}</td>
@@ -32,6 +30,7 @@
         {% endfor %}
     </table>
     <br>
-    <a href="/create">Add New Pet</a>
+    <a href="/create">Add New Pet</a><br>
+    <a href="/kind/list">List of Pet Kinds</a>
 </body>
 </html>
