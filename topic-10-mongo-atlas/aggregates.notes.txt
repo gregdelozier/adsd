@@ -1,0 +1,906 @@
+  mongodb-org-database mongodb-org-database-tools-extra
+  mongodb-org-mongos mongodb-org-server mongodb-org-shell
+  mongodb-org-tools
+0 upgraded, 9 newly installed, 0 to remove and 26 not upgraded.
+Need to get 168 MB of archives.
+After this operation, 652 MB of additional disk space will be used.
+Get:1 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/8.0/multiverse amd64 mongodb-database-tools amd64 100.10.0 [46.5 MB]
+Get:2 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/8.0/multiverse amd64 mongodb-mongosh amd64 2.3.3 [54.1 MB]
+Get:3 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/8.0/multiverse amd64 mongodb-org-shell amd64 8.0.3 [3080 B]
+Get:4 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/8.0/multiverse amd64 mongodb-org-server amd64 8.0.3 [38.6 MB]
+Get:5 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/8.0/multiverse amd64 mongodb-org-mongos amd64 8.0.3 [29.2 MB]
+Get:6 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/8.0/multiverse amd64 mongodb-org-database-tools-extra amd64 8.0.3 [7748 B]
+Get:7 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/8.0/multiverse amd64 mongodb-org-database amd64 8.0.3 [3540 B]
+Get:8 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/8.0/multiverse amd64 mongodb-org-tools amd64 8.0.3 [2892 B]
+Get:9 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/8.0/multiverse amd64 mongodb-org amd64 8.0.3 [2932 B]
+Fetched 168 MB in 2s (88.2 MB/s)         
+Selecting previously unselected package mongodb-database-tools.
+(Reading database ... 70101 files and directories currently installed.)
+Preparing to unpack .../0-mongodb-database-tools_100.10.0_amd64.deb ...
+Unpacking mongodb-database-tools (100.10.0) ...
+Selecting previously unselected package mongodb-mongosh.
+Preparing to unpack .../1-mongodb-mongosh_2.3.3_amd64.deb ...
+Unpacking mongodb-mongosh (2.3.3) ...
+Selecting previously unselected package mongodb-org-shell.
+Preparing to unpack .../2-mongodb-org-shell_8.0.3_amd64.deb ...
+Unpacking mongodb-org-shell (8.0.3) ...
+Selecting previously unselected package mongodb-org-server.
+Preparing to unpack .../3-mongodb-org-server_8.0.3_amd64.deb ...
+Unpacking mongodb-org-server (8.0.3) ...
+Selecting previously unselected package mongodb-org-mongos.
+Preparing to unpack .../4-mongodb-org-mongos_8.0.3_amd64.deb ...
+Unpacking mongodb-org-mongos (8.0.3) ...
+Selecting previously unselected package mongodb-org-database-tools-extra.
+Preparing to unpack .../5-mongodb-org-database-tools-extra_8.0.3_amd64.deb ...
+Unpacking mongodb-org-database-tools-extra (8.0.3) ...
+Selecting previously unselected package mongodb-org-database.
+Preparing to unpack .../6-mongodb-org-database_8.0.3_amd64.deb ...
+Unpacking mongodb-org-database (8.0.3) ...
+Selecting previously unselected package mongodb-org-tools.
+Preparing to unpack .../7-mongodb-org-tools_8.0.3_amd64.deb ...
+Unpacking mongodb-org-tools (8.0.3) ...
+Selecting previously unselected package mongodb-org.
+Preparing to unpack .../8-mongodb-org_8.0.3_amd64.deb ...
+Unpacking mongodb-org (8.0.3) ...
+Setting up mongodb-mongosh (2.3.3) ...
+Setting up mongodb-org-server (8.0.3) ...
+Adding system user `mongodb' (UID 106) ...
+Adding new user `mongodb' (UID 106) with group `nogroup' ...
+Not creating home directory `/home/mongodb'.
+Adding group `mongodb' (GID 108) ...
+Done.
+Adding user `mongodb' to group `mongodb' ...
+Adding user mongodb to group mongodb
+Done.
+System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+Setting up mongodb-org-shell (8.0.3) ...
+Setting up mongodb-database-tools (100.10.0) ...
+Setting up mongodb-org-mongos (8.0.3) ...
+Setting up mongodb-org-database-tools-extra (8.0.3) ...
+Setting up mongodb-org-database (8.0.3) ...
+Setting up mongodb-org-tools (8.0.3) ...
+Setting up mongodb-org (8.0.3) ...
+Processing triggers for man-db (2.9.1-1) ...
+$ mongo --version
+bash: mongo: command not found
+$ mongosh --version
+2.3.3
+$ mongosh "mongodb+srv://pets.kznsr.mongodb.net/" --apiVersion 1 --username gdelozie
+Enter password: ****************
+Current Mongosh Log ID: 672c1c6801be8c61f2c1c18b
+Connecting to:          mongodb+srv://<credentials>@pets.kznsr.mongodb.net/?appName=mongosh+2.3.3
+Using MongoDB:          7.0.15 (API Version 1)
+Using Mongosh:          2.3.3
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+Atlas atlas-q8ddfg-shard-0 [primary] test> show dbs
+pets_db   80.00 KiB
+admin    344.00 KiB
+local     16.97 GiB
+Atlas atlas-q8ddfg-shard-0 [primary] test> use pets_db
+switched to db pets_db
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> show collections
+kind_collection
+pet_collection
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> pet_collection.find()
+ReferenceError: pet_collection is not defined
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> pets_db.pet_collection.find()
+ReferenceError: pets_db is not defined
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> pet_collection.find()
+ReferenceError: pet_collection is not defined
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.find()
+[
+  {
+    _id: ObjectId('6729874b4f434c9c3a083571'),
+    name: 'Suzy',
+    age: 3,
+    owner: 'Greg',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e')
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083572'),
+    name: 'Sandy',
+    age: 2,
+    owner: 'Steve',
+    kind_id: ObjectId('6729874b4f434c9c3a08356f')
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083573'),
+    name: 'Dorothy',
+    age: 1,
+    owner: 'Elizabeth',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e')
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083574'),
+    name: 'Heidi',
+    age: 4,
+    owner: 'David',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e')
+  }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.find().pretty()
+[
+  {
+    _id: ObjectId('6729874b4f434c9c3a083571'),
+    name: 'Suzy',
+    age: 3,
+    owner: 'Greg',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e')
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083572'),
+    name: 'Sandy',
+    age: 2,
+    owner: 'Steve',
+    kind_id: ObjectId('6729874b4f434c9c3a08356f')
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083573'),
+    name: 'Dorothy',
+    age: 1,
+    owner: 'Elizabeth',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e')
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083574'),
+    name: 'Heidi',
+    age: 4,
+    owner: 'David',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e')
+  }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.insert_one({name:"max",age:1,owner:"Janet"})
+TypeError: db.pet_collection.insert_one is not a function
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.insertOne({name:"max",age:1,owner:"Janet"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('672c1dcf01be8c61f2c1c18c')
+}
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.findOne({name:"heidi"})
+null
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.findOne({name:"Heidi"})
+{
+  _id: ObjectId('6729874b4f434c9c3a083574'),
+  name: 'Heidi',
+  age: 4,
+  owner: 'David',
+  kind_id: ObjectId('6729874b4f434c9c3a08356e')
+}
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.findOne({name:"max"})
+{
+  _id: ObjectId('672c1dcf01be8c61f2c1c18c'),
+  name: 'max',
+  age: 1,
+  owner: 'Janet'
+}
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.deleteOne({name:"max"})
+{ acknowledged: true, deletedCount: 1 }
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.updateOne({name:"Heidi"},{"$set":{age:13}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $group { id:"$kind_id", total_pets:{$sum:1}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:39)
+
+> 1 | db.pet_collection.aggregate([ { $group { id:"$kind_id", total_pets:{$sum:1}}])
+    |                                        ^
+  2 |
+
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $group: { _id:"$kind_id", total_pets:{$sum:1}}}])
+[
+  { _id: ObjectId('6729874b4f434c9c3a08356e'), total_pets: 3 },
+  { _id: ObjectId('6729874b4f434c9c3a08356f'), total_pets: 1 }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $group: { _id:"$kind_id", total_pets:{$sum:2}}}])
+[
+  { _id: ObjectId('6729874b4f434c9c3a08356e'), total_pets: 6 },
+  { _id: ObjectId('6729874b4f434c9c3a08356f'), total_pets: 2 }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $group: { _id:"$kind_id", total_pets:{$sum:age}}}])
+ReferenceError: age is not defined
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $group: { _id:"$kind_id", total_pets:{$sum:"age"}}}])
+[
+  { _id: ObjectId('6729874b4f434c9c3a08356f'), total_pets: 0 },
+  { _id: ObjectId('6729874b4f434c9c3a08356e'), total_pets: 0 }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $group: { _id:"$kind_id", total_pets:{$sum:"$age"}}}])
+[
+  { _id: ObjectId('6729874b4f434c9c3a08356e'), total_pets: 17 },
+  { _id: ObjectId('6729874b4f434c9c3a08356f'), total_pets: 2 }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $group: { _id:"$kind_id", total_pets:{$sum:"$age"}}},{$sort:{total_pets:-1}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:107)
+
+> 1 | db.pet_collection.aggregate([ { $group: { _id:"$kind_id", total_pets:{$sum:"$age"}}},{$sort:{total_pets:-1}])
+    |                                                                                                            ^
+  2 |
+
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $group: { _id:"$kind_id", total_pets:{$sum:"$age"}}},{$sort:{total_pets:-1}}])
+[
+  { _id: ObjectId('6729874b4f434c9c3a08356e'), total_pets: 17 },
+  { _id: ObjectId('6729874b4f434c9c3a08356f'), total_pets: 2 }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $group: { _id:"$kind_id", total_pets:{$sum:"$age"}}},{$sort:{total_pets:1}}])
+[
+  { _id: ObjectId('6729874b4f434c9c3a08356f'), total_pets: 2 },
+  { _id: ObjectId('6729874b4f434c9c3a08356e'), total_pets: 17 }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $group: { _id:"$kind_id", total_age:{$sum:"$age"}}},{$sort:{total_age:1}}])
+[
+  { _id: ObjectId('6729874b4f434c9c3a08356f'), total_age: 2 },
+  { _id: ObjectId('6729874b4f434c9c3a08356e'), total_age: 17 }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $group: { _id:"$kind_id", average_age:{$avg:"$age"}}},{$sort:{average_age:1}}])
+[
+  { _id: ObjectId('6729874b4f434c9c3a08356f'), average_age: 2 },
+  {
+    _id: ObjectId('6729874b4f434c9c3a08356e'),
+    average_age: 5.666666666666667
+  }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ {$match: {age:{$gt:2}}},{ $group: { _id:"$kind_id", average_age:{$avg:"$age"}}},{$sort:{average_age:1}}])
+[ { _id: ObjectId('6729874b4f434c9c3a08356e'), average_age: 8 } ]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ {$match: {age:{$gt:1}}},{ $group: { _id:"$kind_id", average_age:{$avg:"$age"}}},{$sort:{average_age:1}}])
+[
+  { _id: ObjectId('6729874b4f434c9c3a08356f'), average_age: 2 },
+  { _id: ObjectId('6729874b4f434c9c3a08356e'), average_age: 8 }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreign_field:"_id",as:"kind_Info"}} ])
+MongoServerError[FailedToParse]: unknown argument to $lookup: foreign_field
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_Info"}} ])
+[
+  {
+    _id: ObjectId('6729874b4f434c9c3a083571'),
+    name: 'Suzy',
+    age: 3,
+    owner: 'Greg',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_Info: [
+      {
+        _id: ObjectId('6729874b4f434c9c3a08356e'),
+        kind_name: 'Dog',
+        food: 'Dog food',
+        noise: 'Bark'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083572'),
+    name: 'Sandy',
+    age: 2,
+    owner: 'Steve',
+    kind_id: ObjectId('6729874b4f434c9c3a08356f'),
+    kind_Info: [
+      {
+        _id: ObjectId('6729874b4f434c9c3a08356f'),
+        kind_name: 'Cat',
+        food: 'Cat food',
+        noise: 'Meow'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083573'),
+    name: 'Dorothy',
+    age: 1,
+    owner: 'Elizabeth',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_Info: [
+      {
+        _id: ObjectId('6729874b4f434c9c3a08356e'),
+        kind_name: 'Dog',
+        food: 'Dog food',
+        noise: 'Bark'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083574'),
+    name: 'Heidi',
+    age: 13,
+    owner: 'David',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_Info: [
+      {
+        _id: ObjectId('6729874b4f434c9c3a08356e'),
+        kind_name: 'Dog',
+        food: 'Dog food',
+        noise: 'Bark'
+      }
+    ]
+  }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$unwind:"$kind_info"} ])
+[
+  {
+    _id: ObjectId('6729874b4f434c9c3a083571'),
+    name: 'Suzy',
+    age: 3,
+    owner: 'Greg',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356e'),
+      kind_name: 'Dog',
+      food: 'Dog food',
+      noise: 'Bark'
+    }
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083572'),
+    name: 'Sandy',
+    age: 2,
+    owner: 'Steve',
+    kind_id: ObjectId('6729874b4f434c9c3a08356f'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356f'),
+      kind_name: 'Cat',
+      food: 'Cat food',
+      noise: 'Meow'
+    }
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083573'),
+    name: 'Dorothy',
+    age: 1,
+    owner: 'Elizabeth',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356e'),
+      kind_name: 'Dog',
+      food: 'Dog food',
+      noise: 'Bark'
+    }
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083574'),
+    name: 'Heidi',
+    age: 13,
+    owner: 'David',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356e'),
+      kind_name: 'Dog',
+      food: 'Dog food',
+      noise: 'Bark'
+    }
+  }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$unwind:{path:"$kind_info"}} ])
+[
+  {
+    _id: ObjectId('6729874b4f434c9c3a083571'),
+    name: 'Suzy',
+    age: 3,
+    owner: 'Greg',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356e'),
+      kind_name: 'Dog',
+      food: 'Dog food',
+      noise: 'Bark'
+    }
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083572'),
+    name: 'Sandy',
+    age: 2,
+    owner: 'Steve',
+    kind_id: ObjectId('6729874b4f434c9c3a08356f'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356f'),
+      kind_name: 'Cat',
+      food: 'Cat food',
+      noise: 'Meow'
+    }
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083573'),
+    name: 'Dorothy',
+    age: 1,
+    owner: 'Elizabeth',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356e'),
+      kind_name: 'Dog',
+      food: 'Dog food',
+      noise: 'Bark'
+    }
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083574'),
+    name: 'Heidi',
+    age: 13,
+    owner: 'David',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356e'),
+      kind_name: 'Dog',
+      food: 'Dog food',
+      noise: 'Bark'
+    }
+  }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$project:{{name:1}}} ])
+Uncaught:
+SyntaxError: Unexpected token (1:135)
+
+> 1 | db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$project:{{name:1}}} ])
+    |                                                                                                                                        ^
+  2 |
+
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$project:{name:1}} ])
+[
+  { _id: ObjectId('6729874b4f434c9c3a083571'), name: 'Suzy' },
+  { _id: ObjectId('6729874b4f434c9c3a083572'), name: 'Sandy' },
+  { _id: ObjectId('6729874b4f434c9c3a083573'), name: 'Dorothy' },
+  { _id: ObjectId('6729874b4f434c9c3a083574'), name: 'Heidi' }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$project:{name:1}},{$sort:{ name:1}} ])
+[
+  { _id: ObjectId('6729874b4f434c9c3a083573'), name: 'Dorothy' },
+  { _id: ObjectId('6729874b4f434c9c3a083574'), name: 'Heidi' },
+  { _id: ObjectId('6729874b4f434c9c3a083572'), name: 'Sandy' },
+  { _id: ObjectId('6729874b4f434c9c3a083571'), name: 'Suzy' }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$project:{name:1,age:1}},{$sort:{ name:1}} ])
+[
+  {
+    _id: ObjectId('6729874b4f434c9c3a083573'),
+    name: 'Dorothy',
+    age: 1
+  },
+  { _id: ObjectId('6729874b4f434c9c3a083574'), name: 'Heidi', age: 13 },
+  { _id: ObjectId('6729874b4f434c9c3a083572'), name: 'Sandy', age: 2 },
+  { _id: ObjectId('6729874b4f434c9c3a083571'), name: 'Suzy', age: 3 }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$project:{name:1,age:1,_id:0}},{$sort:{ name:1}} ]) 
+[
+  { name: 'Dorothy', age: 1 },
+  { name: 'Heidi', age: 13 },
+  { name: 'Sandy', age: 2 },
+  { name: 'Suzy', age: 3 }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$project:{name:1,_id:0}},{$sort:{ name:1}} ])
+[
+  { name: 'Dorothy' },
+  { name: 'Heidi' },
+  { name: 'Sandy' },
+  { name: 'Suzy' }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$project:{name:1,_id:0}},{$sort:{ name:1}},{$count:name} ])
+ReferenceError: name is not defined
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$project:{name:1,_id:0}},{$sort:{ name:1}},{$count:"name"} ])
+[ { name: 4 } ]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$project:{name:1,_id:0}},{$sort:{ name:1}},{$count:"na
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> 
+
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> 
+
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> 
+
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> 
+
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> 
+AbortController                   AbortSignal
+AggregateError                    Array
+ArrayBuffer                       Atomics
+BSONRegExp                        BSONSymbol
+BigInt                            BigInt64Array
+BigUint64Array                    BinData
+Binary                            Blob
+Boolean                           BroadcastChannel
+Buffer                            ByteLengthQueuingStrategy
+Code                              CompressionStream
+CountQueuingStrategy              Crypto
+CryptoKey                         CustomEvent
+DBQuery                           DBRef
+DOMException                      DataView
+Date                              Decimal128
+DecompressionStream               Double
+EJSON                             Error
+EvalError                         Event
+EventTarget                       File
+FinalizationRegistry              Float32Array
+Float64Array                      FormData
+Function                          Headers
+HexData                           ISODate
+Infinity                          Int16Array
+Int32                             Int32Array
+Int8Array                         Intl
+JSON                              Long
+MD5                               Map
+Math                              MaxKey
+MessageChannel                    MessageEvent
+MessagePort                       MinKey
+Mongo                             MongoshAsyncWriterError
+NaN                               Number
+NumberDecimal                     NumberInt
+NumberLong                        Object
+ObjectId                          Performance
+PerformanceEntry                  PerformanceMark
+PerformanceMeasure                PerformanceObserver
+PerformanceObserverEntryList      PerformanceResourceTiming
+Promise                           Proxy
+RangeError                        ReadableByteStreamController
+ReadableStream                    ReadableStreamBYOBReader
+ReadableStreamBYOBRequest         ReadableStreamDefaultController
+ReadableStreamDefaultReader       ReferenceError
+Reflect                           RegExp
+Request                           Response
+Set                               SharedArrayBuffer
+String                            SubtleCrypto
+Symbol                            SyntaxError
+TextDecoder                       TextDecoderStream
+TextEncoder                       TextEncoderStream
+Timestamp                         TransformStream
+TransformStreamDefaultController  TypeError
+TypedArray                        URIError
+URL                               URLSearchParams
+UUID                              Uint16Array
+Uint32Array                       Uint8Array
+Uint8ClampedArray                 WeakMap
+WeakRef                           WeakSet
+WebAssembly                       WritableStream
+WritableStreamDefaultController   WritableStreamDefaultWriter
+_                                 _arrayLikeToArray
+_arrayWithHoles                   _error
+_iterableToArrayLimit             _nonIterableRest
+_print                            _slicedToArray
+_unsupportedIterableToArray       _untrackedShow
+assert                            async_hooks
+atob                              bsonsize
+btoa                              buffer
+buildInfo                         child_process
+clearImmediate                    clearInterval
+clearTimeout                      cls
+cluster                           config
+connect                           console
+constants                         convertShardKeyToHashed
+crypto                            db
+decodeURI                         decodeURIComponent
+dgram                             diagnostics_channel
+disableTelemetry                  dns
+domain                            edit
+enableTelemetry                   encodeURI
+encodeURIComponent                escape
+eval                              events
+exit                              fetch
+fs                                global
+globalThis                        help
+http                              http2
+https                             inspector
+isFinite                          isInteractive
+isNaN                             it
+load                              module
+net                               origArraySort
+origFptS                          origTypedArraySort
+os                                parseFloat
+parseInt                          passwordPrompt
+path                              perf_hooks
+performance                       print
+printjson                         process
+punycode                          querystring
+queueMicrotask                    quit
+readline                          repl
+require                           rs
+setImmediate                      setInterval
+setTimeout                        sh
+show                              sleep
+snippet                           sp
+stream                            string_decoder
+structuredClone                   sys
+timers                            tls
+trace_events                      tty
+undefined                         unescape
+url                               use
+util                              v8
+version                           vm
+wasi                              worker_threads
+zlib
+
+__proto__                         constructor
+hasOwnProperty                    isPrototypeOf
+propertyIsEnumerable              toLocaleString
+toString                          valueOf
+
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> 
+
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> 
+
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$project:{name:1,_id:0}},{$sort:{ name:1}},{$count:"name"} ])
+[ { name: 4 } ]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreign_field:"_id",as:"kind_Info"}} ])
+MongoServerError[FailedToParse]: unknown argument to $lookup: foreign_field
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}} ])
+[
+  {
+    _id: ObjectId('6729874b4f434c9c3a083571'),
+    name: 'Suzy',
+    age: 3,
+    owner: 'Greg',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_info: [
+      {
+        _id: ObjectId('6729874b4f434c9c3a08356e'),
+        kind_name: 'Dog',
+        food: 'Dog food',
+        noise: 'Bark'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083572'),
+    name: 'Sandy',
+    age: 2,
+    owner: 'Steve',
+    kind_id: ObjectId('6729874b4f434c9c3a08356f'),
+    kind_info: [
+      {
+        _id: ObjectId('6729874b4f434c9c3a08356f'),
+        kind_name: 'Cat',
+        food: 'Cat food',
+        noise: 'Meow'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083573'),
+    name: 'Dorothy',
+    age: 1,
+    owner: 'Elizabeth',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_info: [
+      {
+        _id: ObjectId('6729874b4f434c9c3a08356e'),
+        kind_name: 'Dog',
+        food: 'Dog food',
+        noise: 'Bark'
+      }
+    ]
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083574'),
+    name: 'Heidi',
+    age: 13,
+    owner: 'David',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_info: [
+      {
+        _id: ObjectId('6729874b4f434c9c3a08356e'),
+        kind_name: 'Dog',
+        food: 'Dog food',
+        noise: 'Bark'
+      }
+    ]
+  }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$count:"owner"} ])
+[ { owner: 4 } ]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$count:"owner"},{$unwind:"kind_info"} ])
+MongoServerError[Location28818]: path option to $unwind stage should be prefixed with a '$': kind_info
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$count:"owner"},{$unwind:"$kind_info"} ])
+
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$unwind:"$kind_info"} ])
+[
+  {
+    _id: ObjectId('6729874b4f434c9c3a083571'),
+    name: 'Suzy',
+    age: 3,
+    owner: 'Greg',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356e'),
+      kind_name: 'Dog',
+      food: 'Dog food',
+      noise: 'Bark'
+    }
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083572'),
+    name: 'Sandy',
+    age: 2,
+    owner: 'Steve',
+    kind_id: ObjectId('6729874b4f434c9c3a08356f'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356f'),
+      kind_name: 'Cat',
+      food: 'Cat food',
+      noise: 'Meow'
+    }
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083573'),
+    name: 'Dorothy',
+    age: 1,
+    owner: 'Elizabeth',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356e'),
+      kind_name: 'Dog',
+      food: 'Dog food',
+      noise: 'Bark'
+    }
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083574'),
+    name: 'Heidi',
+    age: 13,
+    owner: 'David',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356e'),
+      kind_name: 'Dog',
+      food: 'Dog food',
+      noise: 'Bark'
+    }
+  }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$unwind:"$kind_info"},{$replaceRoot:{newRoot:{$mergeObjects:["$$ROOT","$kind_info"]}}} ])
+[
+  {
+    _id: ObjectId('6729874b4f434c9c3a08356e'),
+    name: 'Suzy',
+    age: 3,
+    owner: 'Greg',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356e'),
+      kind_name: 'Dog',
+      food: 'Dog food',
+      noise: 'Bark'
+    },
+    kind_name: 'Dog',
+    food: 'Dog food',
+    noise: 'Bark'
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a08356f'),
+    name: 'Sandy',
+    age: 2,
+    owner: 'Steve',
+    kind_id: ObjectId('6729874b4f434c9c3a08356f'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356f'),
+      kind_name: 'Cat',
+      food: 'Cat food',
+      noise: 'Meow'
+    },
+    kind_name: 'Cat',
+    food: 'Cat food',
+    noise: 'Meow'
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a08356e'),
+    name: 'Dorothy',
+    age: 1,
+    owner: 'Elizabeth',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356e'),
+      kind_name: 'Dog',
+      food: 'Dog food',
+      noise: 'Bark'
+    },
+    kind_name: 'Dog',
+    food: 'Dog food',
+    noise: 'Bark'
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a08356e'),
+    name: 'Heidi',
+    age: 13,
+    owner: 'David',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_info: {
+      _id: ObjectId('6729874b4f434c9c3a08356e'),
+      kind_name: 'Dog',
+      food: 'Dog food',
+      noise: 'Bark'
+    },
+    kind_name: 'Dog',
+    food: 'Dog food',
+    noise: 'Bark'
+  }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$unwind:"$kind_info"},{$replaceRoot:{newRoot:{$mergeObjects:["$$ROOT","$kind_info"]}}},{$unset:"kind_info"} ])
+[
+  {
+    _id: ObjectId('6729874b4f434c9c3a08356e'),
+    name: 'Suzy',
+    age: 3,
+    owner: 'Greg',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_name: 'Dog',
+    food: 'Dog food',
+    noise: 'Bark'
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a08356f'),
+    name: 'Sandy',
+    age: 2,
+    owner: 'Steve',
+    kind_id: ObjectId('6729874b4f434c9c3a08356f'),
+    kind_name: 'Cat',
+    food: 'Cat food',
+    noise: 'Meow'
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a08356e'),
+    name: 'Dorothy',
+    age: 1,
+    owner: 'Elizabeth',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_name: 'Dog',
+    food: 'Dog food',
+    noise: 'Bark'
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a08356e'),
+    name: 'Heidi',
+    age: 13,
+    owner: 'David',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_name: 'Dog',
+    food: 'Dog food',
+    noise: 'Bark'
+  }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$unwind:"$kind_info"},{$unset:"$kind_info._id"},{$replaceRoot:{newRoot:{$mergeObjects:["$$ROOT","$kind_info"]}}},{$unset:"kind_info"} ])
+MongoServerError[Location16410]: Invalid $unset :: caused by :: FieldPath field names may not start with '$'. Consider using $getField or $setField.
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> db.pet_collection.aggregate([ { $lookup: {from:"kind_collection", localField:"kind_id", foreignField:"_id",as:"kind_info"}},{$unwind:"$kind_info"},{$unset:"kind_info._id"},{$replaceRoot:{newRoot:{$mergeObjects:["$$ROOT","$kind_info"]}}},{$unset:"kind_info"} ])
+[
+  {
+    _id: ObjectId('6729874b4f434c9c3a083571'),
+    name: 'Suzy',
+    age: 3,
+    owner: 'Greg',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_name: 'Dog',
+    food: 'Dog food',
+    noise: 'Bark'
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083572'),
+    name: 'Sandy',
+    age: 2,
+    owner: 'Steve',
+    kind_id: ObjectId('6729874b4f434c9c3a08356f'),
+    kind_name: 'Cat',
+    food: 'Cat food',
+    noise: 'Meow'
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083573'),
+    name: 'Dorothy',
+    age: 1,
+    owner: 'Elizabeth',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_name: 'Dog',
+    food: 'Dog food',
+    noise: 'Bark'
+  },
+  {
+    _id: ObjectId('6729874b4f434c9c3a083574'),
+    name: 'Heidi',
+    age: 13,
+    owner: 'David',
+    kind_id: ObjectId('6729874b4f434c9c3a08356e'),
+    kind_name: 'Dog',
+    food: 'Dog food',
+    noise: 'Bark'
+  }
+]
+Atlas atlas-q8ddfg-shard-0 [primary] pets_db> 
