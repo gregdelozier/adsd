@@ -1,0 +1,162 @@
+[
+    {
+        "City": "Columbus",
+        "Latitude": "39.9612",
+        "Longitude": "-82.9988",
+        "Population": "913175",
+        "Median Household Income": 66990.0,
+        "Average Home Price": 346164.0
+    },
+    {
+        "City": "Cleveland",
+        "Latitude": "41.4993",
+        "Longitude": "-81.6944",
+        "Population": "362656",
+        "Median Household Income": 37351.0,
+        "Average Home Price": 130000.0
+    },
+    {
+        "City": "Cincinnati",
+        "Latitude": "39.1031",
+        "Longitude": "-84.512",
+        "Population": "309317",
+        "Median Household Income": 48130.0,
+        "Average Home Price": 265500.0
+    },
+    {
+        "City": "Toledo",
+        "Latitude": "41.6528",
+        "Longitude": "-83.5379",
+        "Population": "270871",
+        "Median Household Income": 39155.0,
+        "Average Home Price": 125900.0
+    },
+    {
+        "City": "Akron",
+        "Latitude": "41.0814",
+        "Longitude": "-81.519",
+        "Population": "189347",
+        "Median Household Income": 30129.0,
+        "Average Home Price": 139950.0
+    },
+    {
+        "City": "Dayton",
+        "Latitude": "39.7589",
+        "Longitude": "-84.1916",
+        "Population": "137644",
+        "Median Household Income": 34457.0,
+        "Average Home Price": 276129.0
+    },
+    {
+        "City": "Parma",
+        "Latitude": "41.4048",
+        "Longitude": "-81.7229",
+        "Population": "81146",
+        "Median Household Income": 58011.0,
+        "Average Home Price": 226000.0
+    },
+    {
+        "City": "Canton",
+        "Latitude": "40.7989",
+        "Longitude": "-81.3784",
+        "Population": "70872",
+        "Median Household Income": 32287.0,
+        "Average Home Price": 105000.0
+    },
+    {
+        "City": "Youngstown",
+        "Latitude": "41.0998",
+        "Longitude": "-80.6495",
+        "Population": "60068",
+        "Median Household Income": 28822.0,
+        "Average Home Price": 109500.0
+    },
+    {
+        "City": "Lorain",
+        "Latitude": "41.4528",
+        "Longitude": "-82.1824",
+        "Population": "65211",
+        "Median Household Income": 40486.0,
+        "Average Home Price": 148000.0
+    },
+    {
+        "City": "Hamilton",
+        "Latitude": "39.3995",
+        "Longitude": "-84.5613",
+        "Population": "63399",
+        "Median Household Income": 47937.0,
+        "Average Home Price": 203000.0
+    },
+    {
+        "City": "Springfield",
+        "Latitude": "39.9242",
+        "Longitude": "-83.8088",
+        "Population": "58662",
+        "Median Household Income": 39344.0,
+        "Average Home Price": 129900.0
+    },
+    {
+        "City": "Kettering",
+        "Latitude": "39.6895",
+        "Longitude": "-84.1688",
+        "Population": "57862",
+        "Median Household Income": 61974.0,
+        "Average Home Price": 240050.0
+    },
+    {
+        "City": "Elyria",
+        "Latitude": "41.3684",
+        "Longitude": "-82.1076",
+        "Population": "52656",
+        "Median Household Income": 43816.0,
+        "Average Home Price": 185500.0
+    },
+    {
+        "City": "Lakewood",
+        "Latitude": "41.4822",
+        "Longitude": "-81.7982",
+        "Population": "50002",
+        "Median Household Income": 52534.0,
+        "Average Home Price": 220000.0
+    },
+    {
+        "City": "Cuyahoga Falls",
+        "Latitude": "41.1339",
+        "Longitude": "-81.4846",
+        "Population": "49144",
+        "Median Household Income": 60280.0,
+        "Average Home Price": 209900.0
+    },
+    {
+        "City": "Middletown",
+        "Latitude": "39.5151",
+        "Longitude": "-84.3983",
+        "Population": "48807",
+        "Median Household Income": 42290.0,
+        "Average Home Price": 205000.0
+    },
+    {
+        "City": "Newark",
+        "Latitude": "40.0581",
+        "Longitude": "-82.4013",
+        "Population": "49934",
+        "Median Household Income": 45446.0,
+        "Average Home Price": 180000.0
+    },
+    {
+        "City": "Mansfield",
+        "Latitude": "40.7584",
+        "Longitude": "-82.5154",
+        "Population": "46599",
+        "Median Household Income": 37116.0,
+        "Average Home Price": 120000.0
+    },
+    {
+        "City": "Mentor",
+        "Latitude": "41.6662",
+        "Longitude": "-81.3396",
+        "Population": "47450",
+        "Median Household Income": 66273.0,
+        "Average Home Price": 250000.0
+    }
+]
